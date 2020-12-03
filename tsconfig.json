@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es2017",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "resolveJsonModule": true,
+        "sourceMap": false,
+        "removeComments": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "lib": [
+            "es2019.array"
+        ],
+        "paths": {
+            "@common/*": ["./common/*"],
+            "@query-generator/*": ["./query-generator/*"]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

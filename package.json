@@ -1,0 +1,69 @@
+{
+  "name": "basic-query-generator",
+  "version": "0.1.0",
+  "description": "A basic query generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcosSpessatto/basic-query-generator.git"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcosSpessatto/basic-query-generator/issues"
+  },
+  "homepage": "https://github.com/MarcosSpessatto/basic-query-generator#readme",
+  "author": "",
+  "scripts": {
+    "start": "node -r ./tsconfig-paths-bootstrap.js dist/index.js",
+    "build": "tsc --project tsconfig.json  --diagnostics",
+    "dev": "node -r ts-node/register/transpile-only -r tsconfig-paths/register -r dotenv/config ./src/index.ts",
+    "watch": "nodemon",
+    "test": "jest --silent",
+    "watch-test": "npm run test -- --watchAll",
+    "lint": "eslint src/** test/**"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/helmet": "0.0.47",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^12.12.36",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "restoreMocks": true,
+    "clearMocks": true,
+    "resetMocks": true,
+    "collectCoverageFrom": [
+      "./src/**/*"
+    ],
+    "moduleNameMapper": {
+      "@common/(.*)": "<rootDir>/src/common/$1",
+      "@query-generator/(.*)": "<rootDir>/src/query-generator/$1"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/jest.setup.ts"
+    ]
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.23.1",
+    "tsconfig-paths": "^3.9.0",
+    "tsyringe": "^4.3.0"
+  }
+}
